@@ -8,10 +8,13 @@ public class WinScreen implements Screen {
 
 	@Override
 	public void displayOutput(AsciiPanel terminal) {
+		System.out.println("Bravooooooooo Vous avez gagné!!!!!!!!!!!!!!");
+		
 		terminal.write("You won.", 1, 1);
 		
+		System.out.println("-----Appuyez entrer pour redemarrer----.");
 		terminal.writeCenter("-- press [enter] to restart --", 22);
-		System.out.println("You won.");
+		
 	}
 
 	@Override

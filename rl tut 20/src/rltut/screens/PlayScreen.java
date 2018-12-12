@@ -24,7 +24,7 @@ public class PlayScreen implements Screen {
 	private Screen subscreen;
 
 	public PlayScreen(){
-		System.out.println("Votre mission consiste a :");
+		System.out.println("Votre mission consiste a \n Descendez les grottes du moindre danger, \n retrouvez l'ours en peluche perdu et revenez à la surface pour gagner.\n Utilisez ce que vous trouvez pour éviter de mourir.:");
 		screenWidth = 80;
 		screenHeight = 23;
 		messages = new ArrayList<String>();
@@ -46,10 +46,7 @@ public class PlayScreen implements Screen {
 			for (int i = 0; i < 10; i++){
 				factory.newBat(z);
 			}
-			for (int i = 0; i < z * 2 + 1; i++){
-				factory.newZombie(z, player);
-				factory.newGoblin(z, player);
-			}
+			
 		}
 	}
 
@@ -101,13 +98,13 @@ public class PlayScreen implements Screen {
 	
 	private String hunger(){
 		if (player.food() < player.maxFood() * 0.10)
-			return "Starving";
+			return "famine";
 		else if (player.food() < player.maxFood() * 0.25)
-			return "Hungry";
+			return "affame";
 		else if (player.food() > player.maxFood() * 0.90)
-			return "Stuffed";
+			return "bon";
 		else if (player.food() > player.maxFood() * 0.75)
-			return "Full";
+			return "biennourri";
 		else
 			return "";
 	}
@@ -157,27 +154,27 @@ public class PlayScreen implements Screen {
 			case KeyEvent.VK_U: player.moveBy( 1,-1, 0); break;
 			case KeyEvent.VK_B: player.moveBy(-1, 1, 0); break;
 			case KeyEvent.VK_N: player.moveBy( 1, 1, 0); break;
-			case KeyEvent.VK_D: subscreen = new DropScreen(player); break;
-			case KeyEvent.VK_E: subscreen = new EatScreen(player); break;
-			case KeyEvent.VK_W: subscreen = new EquipScreen(player); break;
-			case KeyEvent.VK_X: subscreen = new ExamineScreen(player); break;
-			case KeyEvent.VK_SEMICOLON: subscreen = new LookScreen(player, "Looking", 
-					player.x - getScrollX(), 
-					player.y - getScrollY()); break;
-			case KeyEvent.VK_T: subscreen = new ThrowScreen(player,
-					player.x - getScrollX(), 
-					player.y - getScrollY()); break;
-			case KeyEvent.VK_F: 
-				if (player.weapon() == null || player.weapon().rangedAttackValue() == 0)
-					player.notify("You don't have a ranged weapon equiped.");
-				else
-					subscreen = new FireWeaponScreen(player,
-						player.x - getScrollX(), 
-						player.y - getScrollY()); break;
-			case KeyEvent.VK_Q: subscreen = new QuaffScreen(player); break;
-			case KeyEvent.VK_R: subscreen = new ReadScreen(player,
-						player.x - getScrollX(), 
-						player.y - getScrollY()); break;
+			//case KeyEvent.VK_D: subscreen = new DropScreen(player); break;
+			//case KeyEvent.VK_E: subscreen = new EatScreen(player); break;
+			//case KeyEvent.VK_W: subscreen = new EquipScreen(player); break;
+			//case KeyEvent.VK_X: subscreen = new ExamineScreen(player); break;
+			//case KeyEvent.VK_SEMICOLON: subscreen = new LookScreen(player, "Looking", 
+				//	player.x - getScrollX(), 
+				//	player.y - getScrollY()); break;
+		//	case KeyEvent.VK_T: subscreen = new ThrowScreen(player,
+			//		player.x - getScrollX(), 
+				//	player.y - getScrollY()); break;
+			//case KeyEvent.VK_F: 
+			//	if (player.weapon() == null || player.weapon().rangedAttackValue() == 0)
+			//		player.notify("You don't have a ranged weapon equiped.");
+				//else
+				//	subscreen = new FireWeaponScreen(player,
+					//	player.x - getScrollX(), 
+					//	player.y - getScrollY()); break;
+			//case KeyEvent.VK_Q: subscreen = new QuaffScreen(player); break;
+			//case KeyEvent.VK_R: subscreen = new ReadScreen(player,
+				//		player.x - getScrollX(), 
+				//		player.y - getScrollY()); break;
 			}
 			
 			switch (key.getKeyChar()){
@@ -189,7 +186,7 @@ public class PlayScreen implements Screen {
 				else
 					player.moveBy( 0, 0, -1); break;
 			case '>': player.moveBy( 0, 0, 1); break;
-			case '?': subscreen = new HelpScreen(); break;
+			//case '?': subscreen = new HelpScreen(); break;
 			}
 		}
 

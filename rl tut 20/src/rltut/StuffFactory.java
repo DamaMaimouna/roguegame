@@ -58,21 +58,7 @@ public class StuffFactory {
 		return bat;
 	}
 	
-	public Creature newZombie(int depth, Creature player){
-		Creature zombie = new Creature(world, 'z', AsciiPanel.white, "zombie", 50, 10, 10);
-		world.addAtEmptyLocation(zombie, depth);
-		new ZombieAi(zombie, player);
-		return zombie;
-	}
 
-	public Creature newGoblin(int depth, Creature player){
-		Creature goblin = new Creature(world, 'g', AsciiPanel.brightGreen, "goblin", 66, 15, 5);
-		new GoblinAi(goblin, player);
-		goblin.equip(randomWeapon(depth));
-		goblin.equip(randomArmor(depth));
-		world.addAtEmptyLocation(goblin, depth);
-		return goblin;
-	}
 	
 	public Item newRock(int depth){
 		Item rock = new Item(',', AsciiPanel.yellow, "rock", null);

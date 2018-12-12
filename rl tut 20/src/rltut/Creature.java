@@ -75,7 +75,7 @@ public class Creature {
 		
 		while (xp > (int)(Math.pow(level, 1.75) * 25)) {
 			level++;
-			doAction("advance to level %d", level);
+			doAction("Avancer au niveau  %d", level);
 			ai.onGainLevel();
 			modifyHp(level * 2, "Died from having a negative level?");
 		}
@@ -187,7 +187,7 @@ public class Creature {
 		
 		doAction(action, params2);
 		
-		other.modifyHp(-amount, "Killed by a " + name);
+		other.modifyHp(-amount, "Tuer par un " + name);
 		
 		if (other.hp < 1)
 			gainXp(other);
@@ -210,7 +210,7 @@ public class Creature {
 		if (hp > maxHp) {
 			hp = maxHp;
 		} else if (hp < 1) {
-			doAction("die");
+			doAction("mort");
 			leaveCorpse();
 			world.remove(this);
 		}
@@ -391,10 +391,10 @@ public class Creature {
 		if (food > maxFood) {
 			maxFood = (maxFood + food) / 2;
 			food = maxFood;
-			notify("You can't belive your stomach can hold that much!");
-			modifyHp(-1, "Killed by overeating.");
+			notify("vous avez abusé de la nouritture !");
+			modifyHp(-1, "mort par overdose.");
 		} else if (food < 1 && isPlayer()) {
-			modifyHp(-1000, "Starved to death.");
+			modifyHp(-1000, "mort de faim.");
 		}
 	}
 	

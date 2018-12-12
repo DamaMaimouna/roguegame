@@ -75,7 +75,7 @@ public class Item {
 
 		if (foodValue != 0)
 			details += "  food:" + foodValue;
-		
+		//System.out.println(details);
 		return details;
 	}
 }

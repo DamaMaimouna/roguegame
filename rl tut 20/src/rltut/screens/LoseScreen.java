@@ -17,12 +17,17 @@ public class LoseScreen implements Screen {
 	public void displayOutput(AsciiPanel terminal) {
 		
 		//////////game over////////////
-		terminal.writeCenter("R.I.P.", 3);
+		terminal.writeCenter("R.I.P.", 4);
+		terminal.write("***********************************************************************************",1,1);
+		terminal.writeCenter("----------------------------------", 5);
+		terminal.writeCenter("-----------------------------------", 6);
+		terminal.writeCenter("------Envie de retenter????????----", 7);
 		terminal.writeCenter(player.causeOfDeath(), 5);
-	    terminal.writeCenter("-- press [enter] to restart --", 22);
+	    terminal.writeCenter("-- appuyer [entrer] pour rejouer --", 22);
 	    System.out.println("game over");
 	       String s= player.causeOfDeath(); 
 	       System.out.println(s);
+	       System.out.println("-- appuyer [entrer] pour rejouer --");
 	
 	
 	}
