@@ -3,7 +3,7 @@ package rltut;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+//////////////
 public class Point {
 	public int x;
 	public int y;

@@ -18,7 +18,7 @@ public class LoseScreen implements Screen {
 		
 		//////////game over////////////
 		terminal.writeCenter("R.I.P.", 4);
-		terminal.write("***********************************************************************************",1,1);
+		terminal.write("***********************************************************************************");
 		terminal.writeCenter("----------------------------------", 5);
 		terminal.writeCenter("-----------------------------------", 6);
 		terminal.writeCenter("------Envie de retenter????????----", 7);
