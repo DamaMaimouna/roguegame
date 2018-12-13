@@ -10,10 +10,10 @@ public class WinScreen implements Screen {
 	public void displayOutput(AsciiPanel terminal) {
 		System.out.println("Bravooooooooo Vous avez gagné!!!!!!!!!!!!!!");
 		
-		terminal.write("You won.", 1, 1);
+		terminal.write("Felicitations.", 1, 1);
 		
 		System.out.println("-----Appuyez entrer pour redemarrer----.");
-		terminal.writeCenter("-- press [enter] to restart --", 22);
+		terminal.writeCenter("-- appuyer entrer pour une nouvelle partie --", 22);
 		
 	}
 

@@ -98,13 +98,13 @@ public class PlayScreen implements Screen {
 	
 	private String hunger(){
 		if (player.food() < player.maxFood() * 0.10)
-			return "famine";
+			return "Si vous ne mangez pas vous allez mourir de faim";
 		else if (player.food() < player.maxFood() * 0.25)
-			return "affame";
+			return "vous devez manger";
 		else if (player.food() > player.maxFood() * 0.90)
-			return "bon";
+			return "vous n'avez pas faim";
 		else if (player.food() > player.maxFood() * 0.75)
-			return "biennourri";
+			return "Vous avez abusé de la nourriture";
 		else
 			return "";
 	}
